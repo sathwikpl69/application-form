@@ -56,6 +56,10 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 8px rgba(116, 235, 213, 0.5);
 }
 
+input::placeholder, textarea::placeholder {
+    color: #aaa; /* Style for placeholder text */
+}
+
 button {
     width: 100%;
     padding: 12px;
@@ -76,7 +80,7 @@ button::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255,  255, 255, 0.2);
     border-radius: 10px;
     opacity: 0;
     transition: opacity 0.3s;
@@ -110,6 +114,32 @@ button:active {
     border: 1px solid #b8daff;
     border-radius: 10px;
     display: none; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for result display */
+}
+
+.payment-methods {
+    display: flex; /* Use flexbox to align items in a row */
+    justify-content: space-between; /* Space out the options evenly */
+    margin: 15px 0; /* Add margin above and below */
+}
+
+.payment-option {
+    display: flex; /* Align radio button and label in a row */
+    align-items: center; /* Center align the radio button and label */
+    background: #f0f8ff; /* Light background for the payment options */
+    border-radius: 10px;
+    padding: 10px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.payment-option:hover {
+    background: #e0f7fa; /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.payment-option input {
+    margin-right: 8px; /* Space between radio button and label */
 }
 
 @keyframes fadeIn {

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Registration Form</title>
+    <title>Online Registration Form</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Event Registration Form</h1>
+        <h1>Online Registration Form</h1>
         <form id="registrationForm" action="submit.php" method="POST">
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullName" required>
@@ -55,7 +55,7 @@
 
             <button type="submit">Register</button>
         </form>
-        <div id="result"></div>
+        <div id="result" class="result"></div>
     </div>
 </body>
 </html>

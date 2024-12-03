@@ -1,5 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect and sanitize input data
     $fullName = htmlspecialchars($_POST['fullName']);
     $email = htmlspecialchars($_POST['email']);
     $contactNumber = htmlspecialchars($_POST['contactNumber']);
@@ -8,10 +9,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dietaryPreferences = htmlspecialchars($_POST['dietaryPreferences']);
     $comments = htmlspecialchars($_POST['comments']);
 
-    // Here you can add code to save the data to a database or send an email
+    // Here you can process the data, e.g., save to a database or send an email
 
-    echo "Thank you, $fullName! You have successfully registered for the $eventName.";
+    // For demonstration, we will just return the data as a JSON response
+    echo json_encode([
+        'fullName' => $fullName,
+        'email' => $email,
+        'contactNumber' => $contactNumber,
+        'eventName' => $eventName,
+        'paymentMethod' => $paymentMethod,
+        'dietaryPreferences' => $dietaryPreferences,
+        'comments' => $comments
+    ]);
 } else {
-    echo "Invalid request.";
+    // If the request method is not POST, return a 405 error
+    http_response_code(405);
+    echo "Method Not Allowed";
 }
 ?>
